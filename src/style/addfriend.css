@@ -1,0 +1,124 @@
+/* Background */
+.add-friend-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Title */
+.add-friend-page h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Card effect */
+.add-friend-page input,
+.add-friend-page button,
+.add-friend-page p {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Input */
+.add-friend-page input {
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  outline: none;
+
+  font-size: 16px;
+  margin-bottom: 15px;
+
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Input placeholder */
+.add-friend-page input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus effect */
+.add-friend-page input:focus {
+  border: 2px solid #fff;
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Button */
+.add-friend-page button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover */
+.add-friend-page button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Button click */
+.add-friend-page button:active {
+  transform: scale(0.95);
+}
+
+/* Message box */
+.add-friend-page p {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+
+  text-align: center;
+  font-weight: 500;
+
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .add-friend-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .add-friend-page input,
+  .add-friend-page button,
+  .add-friend-page p {
+    max-width: 90%;
+  }
+}
