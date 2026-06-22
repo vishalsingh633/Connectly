@@ -6,7 +6,7 @@
   "homepage": "https://vishalsingh633.github.io/Connectly",
   "scripts": {
  "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
 
     "dev": "vite",
     "build": "vite build",
