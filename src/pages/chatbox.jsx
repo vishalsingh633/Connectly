@@ -60,7 +60,7 @@ const [mobileChatOpen, setMobileChatOpen] =useState(false);
   // ================= WEBSOCKET =================
   useEffect(() => {
     socket.current = new WebSocket(
-      `ws://127.0.0.1:8000/ws/${currentUser}`
+      `ws://connectly-34w2.onrender.com/ws/${currentUser}`
     );
 
     socket.current.onmessage = (
