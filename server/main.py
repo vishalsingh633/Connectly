@@ -49,6 +49,10 @@ def home():
     return {"message": "Chat backend is running"}
 
 
+@app.get("/api")
+def api():
+    return {"message": "Connectly backend working"}
+
 # ================= AUTH =================
 
 @app.post("/signup")
