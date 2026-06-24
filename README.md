@@ -1,3 +1,36 @@
+
+# Chat Application
+
+A real-time chat application built with FastAPI and WebSocket.
+
+## Live Demo
+🔗 https://zingy-dolphin-fbd41b.netlify.app/
+
+## Features
+- Real-time messaging
+- User authentication
+- Private chat rooms
+- Online/offline status
+
+## Technologies Used
+- FastAPI
+- WebSocket
+- MongoDB
+- HTML/CSS/JavaScript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
