@@ -282,42 +282,30 @@ def get_messages(
 
 active_users = {}
 
-
 @app.websocket("/ws/{email}")
-async def websocket_endpoint(
-    websocket: WebSocket,
-    email: str
-):
-
+async def websocket_endpoint(websocket: WebSocket, email: str):
     await websocket.accept()
 
     active_users[email] = websocket
+    print(f"{email} connected")
 
     try:
-
         while True:
-
             data = await websocket.receive_text()
 
             msg = json.loads(data)
-
             receiver = msg["receiver"]
 
-            # send to receiver
             if receiver in active_users:
-                await active_users[
-                    receiver
-                ].send_text(data)
-
-            # send back to sender
-            if email in active_users:
-                await active_users[
-                    email
-                ].send_text(data)
+                try:
+                    await active_users[receiver].send_text(data)
+                except Exception as e:
+                    print("Receiver error:", e)
+                    active_users.pop(receiver, None)
 
     except WebSocketDisconnect:
+        print(f"{email} disconnected")
 
-        active_users.pop(
-            email,
-            None
-        )
+    finally:
+        if active_users.get(email) == websocket:
+            active_users.pop(email, None)
